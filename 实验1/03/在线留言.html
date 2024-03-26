@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="hjj" />
+				<link href="css/style.css" rel="stylesheet">
+				<title>个人空间</title>
+				<SCRIPT language=JavaScript>
+						document.oncontextmenu = new Function("event.returnValue=false;");
+						document.onselectstart = new Function("event.returnValue=false;");
+					</SCRIPT>
+				<SCRIPT language=JavaScript>
+						function toTop(){
+							document.documentElement.scrollTop=0;
+						}
+					</SCRIPT>
+					<script type="text/javascript">
+						function check(val) {
+							if (val < 10) {
+								return ("0" + val);
+							} 
+							else {
+								return (val);
+							}
+						}
+						function displayTime() {
+							var timeDiv=document.getElementById("timeDiv");
+
+							var date = new Date();
+							var year = date.getFullYear();
+							var month = date.getMonth() + 1;
+							var day = date.getDate();
+							var hour = date.getHours();
+							var minutes = date.getMinutes();
+							var second = date.getSeconds();
+							var timestr = year + "年" + month + "月" + day + "日  " + check(hour)
+									+ ":" + check(minutes) + ":" + check(second);
+							timeDiv.innerHTML = timestr;
+						}
+						function start(){
+					        window.setInterval("displayTime()",1000)
+					}
+					</script>
+				<style type="text/css">
+					
+					
+				#main{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					padding-left: 120px;
+				}	
+				#bo{
+					display: flex;
+					background:#fff; 
+					padding-bottom:50px; 
+					padding-top:30px;
+					width: 1000px;
+					height: 1000px;
+					background-color: #DCE6F4;
+					margin-bottom:20px;
+					border=0;
+					justify-content: center;
+					border=0;
+					flex-wrap: wrap;
+					
+				}
+				#bo ul{
+					width:800px;
+					padding-left:250px;
+					
+					padding-top: 20px;
+				}
+				#text{
+					width: 100px;
+					text-align: center;
+					font-size: 15px;
+				}
+				</style>
+			</head>
+			<body onload="start();">
+				<table width="960" align="center" cellspacing="0" class="nav" style="padding-left: 300px;">
+				<tr>
+					<td height="76" class="branding">
+						</a> </td>
+				</tr>
+					<tr>
+						<td></td>
+						<td width="120" height="125"><a  href="首页.html">首页</a></td>
+				
+						<td width="120"><a href="基本信息.html">基本信息</a></td>
+				
+						<td width="120"><a href="校园生活.html">生活空间</a></td>
+				
+						<td width="150"><a href="Bilibili.html">Bilibili主页</a></td>
+				
+						<td width="120"><a class="active" href="在线留言.html">在线留言</a></td>
+						<td></td>
+					</tr>
+				</table>
+				<main>
+					<div id="main">
+						<div id="bo">
+														<h1 style="padding-top: 50px; text-align:center; font-size:24px; color:#fc93a0;">在线留言</h1>
+<ul>
+							<div id="timeDiv" style="padding-bottom: 100px; "></div> 
+							<li>
+								<div id="text">
+									昵称：
+									<br>
+								</div>
+								<br>
+								<input name="" type="text" style=" width:400px; height:30px;border:1px solid #ccc;" />
+							</li>
+								
+							</ul>
+							<ul><li>
+									<div id="text">
+										电子邮件：
+										<br>
+									</div>
+									<br>
+									<input name="" type="text" style=" width:400px; height:30px;border:1px solid #ccc;" />
+								</li>
+								
+								
+							</ul>
+						<ul>
+							<li>
+									<div id="text">
+										电话：
+										<br>
+									</div>
+									<br>
+									<input name="" type="text" style=" width:400px; height:30px;border:1px solid #ccc;" />
+								</li>
+						</ul>
+						<ul>
+							<li>
+									<div id="text">
+										正文：
+										<br>
+									</div>
+									<br>
+									<textarea name="" cols="" rows="" style="width:400px; height:100px;border:1px solid #ccc;"></textarea>
+								</li><SCRIPT language=JavaScript>
+										document.write("欢迎评价与建议");
+								</SCRIPT>
+						</ul>
+						<ul>
+						<div style="padding-left:40px;padding-right:40px;">
+							<input style="padding:0 80px;height: 40px; text-align: center;
+							            font-size: 16px;color: white;background-color: lightseagreen;
+							                 border: 0;margin: 0;" value="提交信息" />
+						</div>
+							
+						</ul>
+						<ul>
+							
+						</ul>
+						</div>
+						<div id="footer" >
+			 <font color="white" style="padding-left: 400px;">我的个人网站</font>
+				<button class="button" onclick="toTop()" >回到顶部</button>
+				
+			
+			</div>	
+					</div>
+					
+					
+					
+				</main>
+				
+			</body>
+		</html>
+		

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edg,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>叮叮书店</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				list-style-type: none;
+				text-decoration: none;
+			}
+
+			/* 主题 */header {
+				width: 1000px;
+				height: 150px;
+				background-image: url(header.jpg);
+				margin: 0 auto;
+				position: relative;
+			}
+
+			/* 叮叮书店 */header h1 {
+				position: absolute;
+				top: 40px;
+				left: 79px;
+				font-family: 黑体;
+				font-size: 36px;
+				color: #734026;
+			}
+
+			/* 标签 */nav {
+				width: 100%;
+				height: 60px;
+				background-image: url(navbg.jpg);
+				center;
+			}
+
+			#nav {
+				width: 1000px;
+				height: 60px;
+				margin: 0 auto;
+			}
+
+			#nav>ul {
+				width: 800px;
+				height: 60px;
+				padding: 0;
+				float: left;
+			}
+
+			#nav ul li {
+				width: 160px;
+				height: 60px;
+				float: left;
+				position: relative;
+			}
+
+			/* 标签字体 */#nav ul li a{
+				display: block;
+				width: 160px;
+				height: 60px;
+				font-family: 微软雅黑;
+				font-size: 24px;
+				color: white;
+				text-align: center;
+				line-height: 60px;
+			}
+
+			#nav a:hover {
+				background-color: rgba(0, 0, 0, 0.3);
+			}
+
+			#nav ul li ul {
+				position: absolute;
+				width: 160px;
+				height: 180px;
+				background: url(navbg.jpg) center,center;
+				top: 60px;
+				left: 0;
+				display: none;
+
+			}
+
+			#nav ul li:hover ul {
+				display: block;
+			} 
+
+			#cart{
+				width: 120px;
+				height: 40px;
+				margin-top: 10px;
+				float: right;
+			}
+			#cart a{
+				width: 120px;
+				height: 40px;
+				display: block;
+				font-family: 黑体;
+				font-size: 20px;
+				color: #734026;
+				line-height: 40px;
+				background: url(cart.png)no-repeat 20px center;
+				background-color: #F3F3F3;
+				text-indent: 46px;
+				
+			}
+			#nav.cart a:hover{
+				background-color: antiquewhite;
+			}
+			#content-wrapper {
+				width: 800px;
+				height: 3381px;
+				margin: 0 auto;
+			}
+
+			main {
+				width: 537px;
+				height: 3381px;
+				background-color: #F0F8FF;
+				margin: 0;
+				float: left;
+			}
+
+			aside {
+				width: 261px;
+				height: 3381px;
+				background-color: yellow;
+				margin: 0;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>叮叮书店</h1>
+		</header>
+		<nav>
+			<div id="nav">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">书籍分类</a>
+						<ul>
+							<li><a href="#">编程语言</a></li>
+							<li><a href="#">数据库</a></li>
+							<li><a href="#">图形图像</a></li>
+						</ul>
+					</li>
+					<li><a href="#">特刊降价</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">关于我们</a></li>
+				</ul>
+				<div id="cart">
+					<a href="#">购物车</a>
+				</div>
+			</div>
+		</nav>
+		<div id="content-wrapper">
+			<main>
+
+			</main>
+			<aside>
+
+			</aside>
+		</div>
+
+	</body>
+</html>

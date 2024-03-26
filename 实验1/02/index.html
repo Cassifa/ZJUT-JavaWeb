@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .box-card{
+            margin-top: 1%;
+            width: 25%;
+            margin-left: 37.5%;
+        }
+        .headImg{
+            margin:0%;
+			background-repeat: no-repeat;
+			background-size: cover;
+        }
+        .btn{
+            width: 100%;
+            height: 100%;
+        }
+        .borders{
+            width: 100%;
+            color: black; font-weight: bold;
+            height: 100%;
+            /* border-top: 10px solid lightgrey; */
+        }
+        .flag{
+            width: 65px;
+            height: 35px;
+            cursor:default;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div id="app">
+        <el-card class="box-card">
+            <!-- 图片 -->
+            <div slot="header">
+                <img src="./img.png" class="headImg">
+            </div>
+            <!-- 内容 -->
+            <el-form :model="healthInformation" labelPosition="top" >
+                <!-- 离杭 -->
+                <el-form-item label="您最近14天是否离开过杭州或所在城市?" required class="borders" style="color: black; font-weight: bold;">
+                    <el-button type="primary" plain round class="flag" disabled style="cursor: default">
+                        <font style="font-size: 12px; text-align: center; height: 100%;">单选</font>
+                    </el-button>
+                    <br>
+                    <el-radio-group v-model="radio1" style="width: 100%;">
+                      <el-radio :label="3">是</el-radio>
+                      <el-divider ></el-divider>
+                      <br>
+                      <el-radio :label="6">否</el-radio>
+                    </el-radio-group>
+                </el-form-item>
+                <!-- 接触 -->
+                <el-form-item label="您最近14天是否接触过新冠确诊病人或疑似病人?" required class="borders">
+                    <el-button type="primary" plain round class="flag" disabled style="cursor: default">
+                        <font style="font-size: 12px; text-align: center; height: 100%;">单选</font>
+                    </el-button>
+                    <br>
+                    <el-radio-group v-model="radio2" style="width: 100%;">
+                      <el-radio :label="3">是</el-radio>
+                      <el-divider ></el-divider>
+                      <br>
+                      <el-radio :label="6">否</el-radio>
+                    </el-radio-group>
+                </el-form-item>
+                <!-- 症状 -->
+                <el-form-item label="当前健康状况 ( 若有一下状况请在方框内勾选 )" required class="borders">
+                    <el-button type="warning" plain round class="flag" disabled style="cursor: default">
+                        <font style="font-size: 12px; text-align: center; height: 100%;">多选</font>
+                    </el-button>
+                    <br>
+                    <el-checkbox v-model="checked1" style="border-bottom: 1px solid lightgray; width: 100%;">无异常</el-checkbox>
+                    <br>
+                    <el-checkbox v-model="checked2" style="border-bottom: 1px solid lightgray; width: 100%;">乏力</el-checkbox><br>
+                    <el-checkbox v-model="checked3" style="border-bottom: 1px solid lightgray; width: 100%;">干咳</el-checkbox><br>
+                    <el-checkbox v-model="checked4" style="border-bottom: 1px solid lightgray; width: 100%;">鼻塞</el-checkbox><br>
+                    <el-checkbox v-model="checked5" style="border-bottom: 1px solid lightgray; width: 100%;">流涕</el-checkbox><br>
+                    <el-checkbox v-model="checked6" style="border-bottom: 1px solid lightgray; width: 100%;">咽痛</el-checkbox><br>
+                    <el-checkbox v-model="checked7">腹泻</el-checkbox><br>
+                </el-form-item>
+                <!-- 承诺 -->
+                <el-form-item label="本人郑重承诺：" class="borders">
+                    <br>
+                    <el-checkbox v-model="checked8">为疫情防控，本人同意以上信息依法提交所在辖区疫情防控部门统筹<br>管理。</el-checkbox><br>
+                    <el-checkbox v-model="checked9">上述信息是我本人填写，本人对信息的真实性和完整性负责。如果信<br>息有误或确实，本人愿意承担相应的法律责任。
+                        同时本人保证遵守疫<br>情管控的各项规定，配合并听从各项措施和要求。
+                    </el-checkbox><br>
+
+                </el-form-item>
+                <!-- 确认 -->
+                    <el-button type="primary" class="btn" class="borders" @click="custCheck">提交</el-button>
+            </el-form>
+
+        </el-card>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                visible: false ,
+                radio1:'',
+                radio2:'',
+                checked1:'',
+                checked2:'',
+                checked3:'',
+                checked4:'',
+                checked5:'',
+                checked6:'',
+                checked7:'',
+                checked8:'',
+                checked9:'',
+            }
+        },
+    methods: {
+        custCheck() {
+            if (!this.radio1 || !this.radio2) {
+                alert("请完整填写信息!");
+                return false;
+            } else if (!this.checked8 || !this.checked9) {
+                alert("请确认承诺!");
+                return false;
+            } else {
+                // 成功
+                alert("成功!");
+                return false;
+            }
+        }
+    }
+    })
+</script>
+ 
+</html>

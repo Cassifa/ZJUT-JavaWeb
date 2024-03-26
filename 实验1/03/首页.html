@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="hjj" />
+		<link href="css/style.css" rel="stylesheet">
+		<title>个人空间</title>
+		<SCRIPT language=JavaScript>
+			document.oncontextmenu = new Function("event.returnValue=false;");
+				document.onselectstart = new Function("event.returnValue=false;");
+			</SCRIPT>
+		<SCRIPT language=JavaScript>
+			function toTop(){
+					document.documentElement.scrollTop=0;
+				}
+			</SCRIPT>
+		<style type="text/css">
+			#main {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding-left: 120px;
+			}
+
+			#bo {
+				display: flex;
+				background: #fff;
+				padding-bottom: 50px;
+				padding-top: 30px;
+				width: 1000px;
+				height: 1500px;
+				background-color: #DCE6F4;
+				margin-bottom: 20px;
+				border=0;
+				justify-content: center;
+				border=0;
+				flex-wrap: wrap;
+
+			}
+			#bo ul{
+				padding-top: 50px;
+			}
+
+			.a {
+				display: grid;
+				height: 640px;
+				width: 940px;
+				grid-template-columns: 300px 300px 300px 300px;
+				grid-template-rows: 200px 200px 200px 200px;
+				grid-gap: 20px;
+				background-color: #DCE6F4;
+			}
+
+			#a1 {
+				grid-column: 1/3;
+				grid-row: 1/3;
+				background-image: url(images/a1.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+				text-align: center;
+				text-decoration: center;
+			}
+
+			#a2 {
+				grid-column: 3/4;
+				grid-row: 1/2;
+				background-image: url(images/a2.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+				text-align: center;
+			}
+
+			#a3 {
+				grid-column: 3/4;
+				grid-row: 2/4;
+				background-image: url(images/a3.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+				text-align: center;
+			}
+
+			#a4 {
+				grid-column: 1/2;
+				grid-row: 3/4;
+				background-image: url(images/a4.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+				text-align: center;
+			}
+
+			#a5 {
+				grid-column: 2/3;
+				grid-row: 3/4;
+				background-image: url(images/a5.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+				text-align: center;
+			}
+
+			#adv {
+				width: 820px;
+				height: 369px;
+				background: no-repeat url;
+				background-size: 820px 369px;
+				animation: lunbo 10s linear infinite;
+				position: relative;
+				margin-bottom: 10px;
+			}
+
+			#adv ul {
+				padding-left: 675px;
+				padding-top: 333px;
+				height: 30px;
+				width: 140px;
+			}
+
+			#adv ul li {
+				float: left;
+				margin: 0 5px 6px 0;
+			}
+
+			#adv ul li span {
+				display: block;
+				width: 30px;
+				height: 30px;
+				font-size: 14px;
+				line-height: 30px;
+				text-align: center;
+				color: #DCE6F4;
+				border-radius: 30px;
+				background-color: #733f26;
+				position: relative;
+				z-index: 100;
+			}
+
+			#adv ul li:hover span {
+				background-color: #a67359;
+			}
+
+			#adv ul li:hover div {
+				width: 820px;
+				height: 369px;
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: 820px 369px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
+			#adv ul li.lunbo1:hover div {
+				background-image: url(images/a2.jpg);
+				width: 410px;
+				height: 60px;
+			}
+
+			#adv ul li.lunbo2:hover div {
+				background-image: url(images/a2.jpg);
+			}
+
+			#adv ul li.lunbo3:hover div {
+				background-image: url(images/a3.jpg);
+			}
+
+			#adv ul li.lunbo4:hover div {
+				background-image: url(images/a5.jpg);
+			}
+
+			@keyframes lunbo {
+				0% {
+					background: url(images/a2.jpg) no-repeat top left;
+					background-size: 820px 369px;
+				}
+
+				25% {
+					background: url(images/a2.jpg) no-repeat top left;
+					background-size: 820px 369px;
+				}
+
+				50% {
+					background: url(images/a3.jpg) no-repeat top left;
+					background-size: 820px 369px;
+				}
+
+				75% {
+					background: url(images/a4.jpg) no-repeat top left;
+					background-size: 820px 369px;
+				}
+
+				100% {
+					background: url(images/a5.jpg) no-repeat top left;
+					background-size: 820px 369px;
+				}
+			}
+		</style>
+
+	</head>
+	<body>
+		<table width="960" align="center" cellspacing="0" class="nav" style="padding-left: 300px;">
+			<tr>
+				<td height="76" class="branding">
+					</a> </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td width="120" height="125"><a class="active" href="首页.html">首页</a></td>
+
+				<td width="120"><a href="基本信息.html">基本信息</a></td>
+
+				<td width="120"><a href="校园生活.html">生活空间</a></td>
+
+				<td width="150"><a href="Bilibili.html">Bilibili主页</a></td>
+
+				<td width="120"><a href="在线留言.html">在线留言</a></td>
+				<td></td>
+			</tr>
+		</table>
+		<main>
+			<div id="main">
+				<div id="bo">
+					<ul>
+						<h1 style="font-size:24px; line-height:50px; color:#000; text-indent:280px;">欢迎来到我的空间</h1>
+						<br>
+						<div id="adv">
+							<ul>
+								<li class="lunbo1">
+									<span>1</span>
+									<div></div>
+								</li>
+								<li class="lunbo2">
+									<span>2</span>
+									<div></div>
+								</li>
+								<li class="lunbo3">
+									<span>3</span>
+									<div></div>
+								</li>
+								<li class="lunbo4">
+									<span>4</span>
+									<div></div>
+								</li>
+							</ul>
+						</div>
+						<br><br>
+
+						<li>
+							<p style="padding-left:26px; font-size:30px; color:#f07a8b;">自我介绍 </p>
+							<p style="padding-left:26px; font-size:20px; color:#f07a8b;">姓名;这是一个简短的自我介绍</p>
+						</li>
+
+					</ul>
+					<ul>
+						<img src="images/hr1.png" />
+						<br><br><br>
+						<div class="t2" style="padding-left:30px; padding-right: 30px;">
+							<h1 style="font-size:24px; line-height:50px; color:#000; text-align:center;">我的相册</h1>
+							<br><br>
+							<div class="a">
+								<div id="a1"></div>
+								<div id="a2"></div>
+								<div id="a3"></div>
+								<div id="a4"></div>
+								<div id="a5"></div>
+							</div>
+					</ul>
+
+
+
+
+
+				</div>
+
+				<div id="footer">
+					<font color="white" style="padding-left: 400px;">我的个人网站</font>
+					<button class="button" onclick="toTop()">回到顶部</button>
+
+				</div>
+			</div>
+
+		</main>
+
+	</body>
+</html>

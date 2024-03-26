@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>是吧</title>
+</head>
+<!--<body>-->
+<!--    <h1>${message}，请<a href="./login.html">重新登录</a></h1>-->
+<!--</body>-->
+<script>
+    // 获取 URL 中的参数
+    const urlParams = new URLSearchParams(window.location.search);
+    // 获取名为 "username" 的参数值
+    const error = urlParams.get('error');
+
+    document.write('<h1>'+error+'请<a href="./login.html">重新登录</a></h1>');
+</script>
+</html>
