@@ -9,5 +9,6 @@
 </h1>
 <br/>
 <a href="input.jsp">点击跳转实验1</a>
+<a href="./hw/login.jsp">点击跳转实验2</a>
 </body>
 </html>
