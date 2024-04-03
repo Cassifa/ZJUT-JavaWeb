@@ -29,7 +29,6 @@ public class StudentServlet extends HttpServlet {
         student.setName(request.getParameter("name"));
         student.setMajor(request.getParameter("major"));
         request.getSession().setAttribute("student",student);
-        System.out.println(student);
         //转发
         request.getRequestDispatcher("./test1/displayStudent.jsp").forward(request,response);
     }
