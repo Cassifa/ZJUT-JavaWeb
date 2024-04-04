@@ -5,7 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Hello Test4" %>
 </h1>
 <br/>
 <a href="./test1/inputStudent.jsp">点击跳转实验1</a><br>

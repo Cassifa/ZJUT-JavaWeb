@@ -27,7 +27,9 @@
 <%-- 生成二维码 --%>
 
 <%
-    String qrCodeData = "Name: " + user.getName() + ", ID: " + user.getId() + ", Son: " + user.getSon() + ", Phone: " + user.getPhone() + ", Color: " + user.getColor();
+    String qrCodeData = "Name: " + user.getName() + ", ID: " + user.getId() +
+            ", Son: " + user.getSon() + ", Phone: " + user.getPhone() +
+            ", Time: " + user.getDate();
     int width = 300;
     int height = 300;
     String imageFormat = "png";
