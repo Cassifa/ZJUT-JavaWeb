@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .myTable{
+      border: 2px solid #0000FF;
+      margin-top: 15%;
+    }
+    .inputs{
+      width: 95%;
+      height: 25px;
+      color: #999;
+    }
+    .btn{
+      background-color:#4a8bd6;
+      width: 90%;
+      height: 40px;
+      border: none;
+      color: aliceblue;
+      text-decoration: underline; /* 添加白色下划线 */
+      margin: 10px;
+    }
+    .box-card{
+      margin-top: 1%;
+      width: 25%;
+      margin-left: 37.5%;
+    }
+    .headImg{
+      margin:0%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .btn{
+      width: 100%;
+      height: 100%;
+    }
+    .borders{
+      width: 100%;
+      color: black; font-weight: bold;
+      height: 100%;
+      /* border-top: 10px solid lightgrey; */
+    }
+    .flag{
+      width: 65px;
+      height: 35px;
+      cursor:default;
+    }
+  </style>
+</head>
+
+<body>
+<div id="app">
+  <el-card class="box-card" style="width: 30%;">
+
+    <!-- 内容 -->
+    <el-form :model="healthInformation" labelPosition="top" id="from" act>
+      <!-- 信息 -->
+      <!-- 姓名 -->
+      <el-form-item label="姓名">
+        <el-input v-model="name" placeholder="请输入姓名"></el-input>
+      </el-form-item>
+      <!-- 身份证号 -->
+      <el-form-item label="身份证号">
+        <el-input v-model="id" placeholder="请输入身份证号"></el-input>
+      </el-form-item>
+      <!-- 工号或学号 -->
+      <el-form-item label="工号或学号">
+        <el-input v-model="son" placeholder="请输入工号或学号"></el-input>
+      </el-form-item>
+      <!-- 手机号 -->
+      <el-form-item label="手机号">
+        <el-input v-model="phone" placeholder="请输入手机号"></el-input>
+      </el-form-item>
+      <!-- 重点疫区 -->
+      <el-form-item label="本人近期（14天内）是否去过重点疫区？" required class="borders" style="color: black; font-weight: bold;">
+        <el-button type="primary" plain round class="flag" disabled style="cursor: default">
+          <font style="font-size: 12px; text-align: center; height: 100%;">单选</font>
+        </el-button>
+        <br>
+        <el-radio-group v-model="radio1" style="width: 100%;">
+          <el-radio :label="1">是</el-radio>
+          <el-divider ></el-divider>
+          <br>
+          <el-radio :label="0">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <!-- 国外 -->
+      <el-form-item label="本人近期（14天内）是否去过国外？" required class="borders" style="color: black; font-weight: bold;">
+        <el-button type="primary" plain round class="flag" disabled style="cursor: default">
+          <font style="font-size: 12px; text-align: center; height: 100%;">单选</font>
+        </el-button>
+        <br>
+        <el-radio-group v-model="radio2" style="width: 100%;">
+          <el-radio :label="1">是</el-radio>
+          <el-divider ></el-divider>
+          <br>
+          <el-radio :label="0">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <!-- 接触 -->
+      <el-form-item label="您最近14天是否接触过新冠确诊病人或疑似病人?" required class="borders">
+        <el-button type="primary" plain round class="flag" disabled style="cursor: default">
+          <font style="font-size: 12px; text-align: center; height: 100%;">单选</font>
+        </el-button>
+        <br>
+        <el-radio-group v-model="radio3" style="width: 100%;">
+          <el-radio :label="1">是</el-radio>
+          <el-divider ></el-divider>
+          <br>
+          <el-radio :label="0">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <!-- 确诊 -->
+      <el-form-item label="本人是否被卫生部门确认为新冠肺炎确诊病例或疑似病例？" required class="borders">
+        <el-button type="primary" plain round class="flag" disabled style="cursor: default">
+          <font style="font-size: 12px; text-align: center; height: 100%;">单选</font>
+        </el-button>
+        <br>
+        <el-radio-group v-model="radio4" style="width: 100%;">
+          <el-radio :label="1">是</el-radio>
+          <el-divider ></el-divider>
+          <br>
+          <el-radio :label="0">否</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <!-- 症状 -->
+      <el-form-item label="当前健康状况 ( 若有一下状况请在方框内勾选 )" required class="borders">
+        <el-button type="warning" plain round class="flag" disabled style="cursor: default">
+          <font style="font-size: 12px; text-align: center; height: 100%;">多选</font>
+        </el-button>
+        <br>
+        <el-checkbox v-model="checked1" style="border-bottom: 1px solid lightgray; width: 100%;">无异常</el-checkbox>
+        <br>
+        <el-checkbox v-model="checked10" style="border-bottom: 1px solid lightgray; width: 100%;">发烧(>=37℃)</el-checkbox><br>
+        <el-checkbox v-model="checked2" style="border-bottom: 1px solid lightgray; width: 100%;">乏力</el-checkbox><br>
+        <el-checkbox v-model="checked3" style="border-bottom: 1px solid lightgray; width: 100%;">干咳</el-checkbox><br>
+        <el-checkbox v-model="checked4" style="border-bottom: 1px solid lightgray; width: 100%;">鼻塞</el-checkbox><br>
+        <el-checkbox v-model="checked5" style="border-bottom: 1px solid lightgray; width: 100%;">流涕</el-checkbox><br>
+        <el-checkbox v-model="checked6" style="border-bottom: 1px solid lightgray; width: 100%;">咽痛</el-checkbox><br>
+        <el-checkbox v-model="checked7">腹泻</el-checkbox><br>
+      </el-form-item>
+      <!-- 承诺 -->
+      <el-form-item label="本人郑重承诺：" class="borders">
+        <br>
+        <el-checkbox v-model="checked8">为疫情防控，本人同意以上信息依法提交所在辖区疫情防控部门统筹<br>管理。</el-checkbox><br>
+        <el-checkbox v-model="checked9">上述信息是我本人填写，本人对信息的真实性和完整性负责。如果信<br>息有误或确实，本人愿意承担相应的法律责任。
+          同时本人保证遵守疫<br>情管控的各项规定，配合并听从各项措施和要求。
+        </el-checkbox><br>
+
+      </el-form-item>
+      <!-- 确认 -->
+      <el-button type="primary" class="btn" class="borders" @click="custCheck">提交</el-button>
+    </el-form>
+    <!-- 隐藏的表单 -->
+    <form ref="hiddenForm" action="../acceptHealthDataServlet" method="post" style="display: none;">
+      <input type="text" name="name" :value="name">
+      <input type="text" name="id" :value="id">
+      <input type="text" name="son" :value="son">
+      <input type="text" name="phone" :value="phone">
+      <input type="text" name="radio1" :value="radio1">
+      <input type="text" name="radio2" :value="radio2">
+      <input type="text" name="radio3" :value="radio3">
+      <input type="text" name="radio4" :value="radio4">
+      <input type="text" name="checked1" :value="checked1">
+      <input type="text" name="checked2" :value="checked2">
+      <input type="text" name="checked3" :value="checked3">
+      <input type="text" name="checked4" :value="checked4">
+      <input type="text" name="checked5" :value="checked5">
+      <input type="text" name="checked6" :value="checked6">
+      <input type="text" name="checked7" :value="checked7">
+      <input type="text" name="checked8" :value="checked8">
+      <input type="text" name="checked9" :value="checked9">
+      <input type="text" name="checked10" :value="checked10">
+    </form>
+
+
+  </el-card>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: function () {
+      return {
+        name:'',
+        id:'',
+        son:'',
+        phone:'',
+        radio1:'',
+        radio2:'',
+        radio3:'',
+        radio4:'',
+        checked1:'',
+        checked2:'',
+        checked3:'',
+        checked4:'',
+        checked5:'',
+        checked6:'',
+        checked7:'',
+        checked8:'',
+        checked9:'',
+        checked10:'',
+      }
+    },
+    methods: {
+      custCheck() {
+        if(!this.name||!this.id||!this.son||!this.phone){
+          alert("请补全个人信息!");
+        }else if (this.radio1===''||this.radio2===''||this.radio3===''||this.radio4==='') {
+          alert("请完整填写信息!");
+          return false;
+        } else if (!this.checked8 || !this.checked9) {
+          alert("请确认承诺!");
+          return false;
+        } else {
+          this.$refs.hiddenForm.submit();
+        }
+      }
+    }
+  })
+</script>
+
+</html>

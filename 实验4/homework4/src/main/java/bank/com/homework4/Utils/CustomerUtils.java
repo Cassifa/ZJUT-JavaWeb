@@ -43,7 +43,6 @@ public class CustomerUtils {
       // 将用户信息写入文件
       writer.write(userInfo);
       writer.newLine(); // 换行
-      System.out.println("写入成功");
 
     } catch (IOException e) {
       e.printStackTrace();
