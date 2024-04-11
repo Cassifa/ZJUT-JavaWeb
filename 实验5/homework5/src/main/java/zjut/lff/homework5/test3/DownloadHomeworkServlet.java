@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 public class DownloadHomeworkServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request,response);
     }
 
     @Override
@@ -35,7 +35,9 @@ public class DownloadHomeworkServlet extends HttpServlet {
         UserBean user = JSONObject.parseObject(
                 (String) request.getSession().getAttribute("user"), UserBean.class
         );
+        String id = request.getParameter("id");
         String filename = request.getParameter("filename");
+        //检查权限
         if (!HomeworkUtils.isValid(user, filename)) {
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();

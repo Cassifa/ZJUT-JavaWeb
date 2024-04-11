@@ -46,10 +46,11 @@ public class LoginActionServlet extends HttpServlet {
         cookie.setMaxAge(60*30);
         response.addCookie(cookie);
         session.setAttribute("user", JSON.toJSONString(userBean));
+        session.setAttribute("type",userBean.getType());
         if(type.equals("教师")){
             //实验二用下面这行代码
 //            request.getRequestDispatcher("./test2/teacher.jsp").forward(request,response);
-            request.getRequestDispatcher("./test3/AllHomeworkServlet").forward(request,response);
+            request.getRequestDispatcher("AllHomeworkServlet").forward(request,response);
         }
         else {
             //实验二用下面这行代码

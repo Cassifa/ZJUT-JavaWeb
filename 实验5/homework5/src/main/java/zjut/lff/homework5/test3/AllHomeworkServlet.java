@@ -26,14 +26,13 @@ public class AllHomeworkServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //未登录
         if(!SessionUtil.isValid(request)){
-            request.getRequestDispatcher("./test2/login.jsp").forward(request,response);
+            response.sendRedirect("./test2/login.jsp");
             return;
         }
         //获取作业信息
         HomeworkUtils.setServletContext(getServletContext());
         String jsonData=HomeworkUtils.getJsonHomeworks(null);
         request.getSession().setAttribute("data",jsonData);
-        System.out.println(jsonData);
         //转发给前端
         request.getRequestDispatcher("./test3/homework.jsp").forward(request,response);
     }
