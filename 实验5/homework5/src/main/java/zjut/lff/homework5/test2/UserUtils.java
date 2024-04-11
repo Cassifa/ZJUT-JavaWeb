@@ -1,9 +1,10 @@
 package zjut.lff.homework5.test2;
 
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
 import jakarta.servlet.ServletContext;
 
 import java.io.*;
-import java.util.Arrays;
 import java.util.HashSet;
 
 /*
@@ -44,12 +45,13 @@ public class UserUtils {
                     UserBean user = new UserBean(id, password, name, userType);
                     set.add(user);
                 } else {
-                    System.err.println("Invalid line format: " + line);
+                    System.err.println("非法数据: " + line);
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error reading user file: " + e.getMessage());
+            System.err.println("读取文件失败: " + e.getMessage());
         }
         return set;
     }
+
 }

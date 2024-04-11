@@ -31,8 +31,8 @@ public class LoginServlet extends HttpServlet {
         }
         else if(name.equals("admin")&&password.equals("12345678a")){
             //登录成功，新建session
-            HttpSession session1=request.getSession();
-            Cookie cookie=new Cookie("JSESSIONID",session1.getId());
+            HttpSession session=request.getSession();
+            Cookie cookie=new Cookie("JSESSIONID",session.getId());
             //与session时长相同
             cookie.setMaxAge(60*30);
             response.addCookie(cookie);
