@@ -46,7 +46,7 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String sno = request.getParameter("sno");
         String tno = request.getParameter("tno");
-        if (sno != null&&!sno.equals("")) id = sno;
+        if (sno != null && !sno.equals("")) id = sno;
         else id = tno;
 
         if (userType == null || id == null || password == null) {
